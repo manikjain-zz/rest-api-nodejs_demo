@@ -20,6 +20,6 @@ A category can have multiple child categories. A child category can have further
 
 ### POSTMAN Collection
 
-The repo consists of a postman collection which may be used to quickly get an idea about how the API endpoints . The collection mimics the following workflow:
+The repo consists of a postman collection which may be used to quickly get an idea about how the API endpoints work. The collection mimics the following workflow:
 
 ![rest api test workflow](https://user-images.githubusercontent.com/21245503/44470951-8ab87280-a648-11e8-8c85-9ef2e6f2133b.jpeg)
