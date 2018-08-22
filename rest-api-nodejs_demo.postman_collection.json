@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "90d1f631-6249-4b33-a171-5cce39eef614",
+		"name": "rest-api-nodejs_demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "1ec49878-2419-4567-9ddc-138a481f4348",
+			"name": "Add a category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"parent\": \"Books\",\n\t\"child\": \"Fiction\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/category/add",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"category",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9a6001a3-daed-41ff-8809-5fac65387373",
+			"name": "Invalid body check while adding categories",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"child\": \"\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/category/add",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"category",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ae8f0b05-18d5-4622-afc0-f72384bd7e87",
+			"name": "Add a sub category within a sub category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"parent\": \"Fiction\",\n\t\"child\": \"Humor\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/category/add",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"category",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9d52f61b-2ed0-4a86-9095-25715c148334",
+			"name": "Add another category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"parent\": \"Books\",\n\t\"child\": \"Non-fiction\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/category/add",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"category",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "204ffb38-2a2b-453d-bd00-f606532c8c1d",
+			"name": "Add a product by category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"The Small Bachelor\",\n\t\"price\": 100,\n\t\"categories\": [\"Humor\",\"Fiction\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/product/add",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9c68c64d-fd81-4008-a02f-7ea244604313",
+			"name": "Add another product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"The Power of Now\",\n\t\"price\": 200,\n\t\"categories\": [\"Non-fiction\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/product/add",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f88c9978-e515-409f-acb7-ca8aa1970d3b",
+			"name": "Invalid body check while adding products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"price\": \"\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/product/add",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "2061c19d-bcf3-4f2c-a0be-68b4c5c91c68",
+			"name": "Get all categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4322/api/category",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "bef16cba-ff50-475e-bcb2-6be9abea9a73",
+			"name": "Get a product by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:4322/api/product?category=Fiction",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"product"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Fiction"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3d631185-cfc3-4f2e-a3e8-2cf780dc8ff6",
+			"name": "Update a product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"productName\": \"The Small Bachelor\",\n\t\"name\": \"The Small Bachelor by PG Wodehouse\",\n\t\"price\": 100,\n\t\"categories\": [\"Books\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/product/update",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"product",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "4bd08c93-4ff2-4281-830d-e36b8056c1d7",
+			"name": "Invalid body check for update products",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"\"\n}"
+				},
+				"url": {
+					"raw": "localhost:4322/api/product/update",
+					"host": [
+						"localhost"
+					],
+					"port": "4322",
+					"path": [
+						"api",
+						"product",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
